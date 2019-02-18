@@ -1,0 +1,22 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  overflow: hidden;
+
+}
+
+@import "pages/layout";
+@import "components/sp-titlebar";
+@import "components/sp-tabbar";
+@import "components/sp-current-music-bar";
+@import "components/sp-music-card";
+@import "components/sp-search-input";
+@import "components/sp-artist";
+@import "components/sp-song";
+@import "components/sp-indicator";
+@import "components/sp-play-pause";
+@import "components/sp-modal-player";

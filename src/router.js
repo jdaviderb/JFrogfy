@@ -6,6 +6,13 @@ const Router = EmberRouter.extend({
   rootURL: config.rootURL
 });
 
-Router.map(function() {});
+Router.map(function() {
+  this.route('home', { path: '/' });
+  this.route('search');
+
+  this.route('playlists', function() {
+    this.route('show', { path: ':id' })
+  });
+});
 
 export default Router;

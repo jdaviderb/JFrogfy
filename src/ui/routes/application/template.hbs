@@ -1,5 +1,12 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
 
-{{outlet}}
+<div class="spotify-container">
+  {{outlet}}
+
+  <div class="spotify-footer">
+    {{sp-current-music-bar}}
+    {{sp-indicator}}
+    {{sp-tabbar}}
+  </div>
+  {{sp-modal-player}}
+</div>
+

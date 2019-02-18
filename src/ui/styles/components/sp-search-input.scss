@@ -1,0 +1,16 @@
+.sp-search-input {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  padding: 1em;
+  font-size: 1.5rem;
+  color: white;
+  outline: none;
+  background-color: rgba(0,0,0,.1);
+  border: none;
+  border-bottom: solid 1px rgba(0,0,0,.3);
+
+  &::placeholder {
+    color: rgba(255, 255, 255, .5);
+  }
+}

@@ -1,0 +1,29 @@
+.sp-tabbar {
+  display: flex;
+  flex-direction: row;
+  background-color: #222327;
+
+  .tab {
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+    flex: 1;
+    color: white;
+    cursor: pointer;
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    opacity: .5;
+
+    img {
+      width: 2em;
+      height: 2em;
+      margin-bottom: 0.5em;
+    }
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}

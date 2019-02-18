@@ -1,0 +1,30 @@
+.sp-music-card {
+
+  a {
+    text-decoration: none;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    color: white;
+  }
+
+  display: flex;
+  align-self: flex-start;
+  margin: 0.5em;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    opacity: .5;
+  }
+
+  .img {
+    img {
+      width: 200px;
+      height: 200px;
+      box-shadow: 0 0 2px black;
+      background-color: rgba(0,0,0, .8)
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<div class="spotify-content color-orange">
+
+  <div class="section">
+    {{sp-artist name=model.title image=model.image}}
+  </div>
+
+  <div class="section">
+    {{#each model.tracks as |track|}}
+      {{sp-song
+        onClick=(action play track model.tracks)
+        song=track.name
+        artist=track.artist
+      }}
+    {{/each}}
+  </div>
+</div>

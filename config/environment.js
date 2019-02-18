@@ -10,6 +10,7 @@ module.exports = function(environment) {
     modulePrefix: 'client',
     environment,
     rootURL: '/',
+    apiServer: process.env.API_SERVER,
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
@@ -28,6 +29,9 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+    fastboot: {
+      hostWhitelist: ['jfrogfy.herokuapp.com', /^localhost:\d+$/]
     }
   };
 

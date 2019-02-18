@@ -1,0 +1,38 @@
+<div class="spotify-content color-orange">
+  {{sp-search-input value=searchState.keyword placeholder="Start typing..."}}
+
+  {{#if searchState.artist}}
+    <div class="section">
+      {{sp-artist
+        name=searchState.artist.name
+        image=searchState.artist.image
+      }}
+    </div>
+
+    <div class="title">
+      Featuring {{searchState.artist.name}}
+    </div>
+  {{/if}}
+
+  <div class="section">
+    <div class="cards no-wrap justify-content-initial">
+      {{#each searchState.playlists as |playlist|}}
+        {{sp-music-card
+          id=playlist.id
+          name=playlist.name
+          image=playlist.image
+        }}
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="section">
+    {{#each searchState.tracks as |track|}}
+      {{sp-song
+        onClick=(action play track searchState.tracks)
+        song=track.name
+        artist=track.artist
+      }}
+    {{/each}}
+  </div>
+</div>

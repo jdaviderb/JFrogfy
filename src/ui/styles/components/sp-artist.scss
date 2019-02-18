@@ -1,0 +1,14 @@
+.sp-artist {
+  display: flex;
+  align-items: center;
+
+  .photo img {
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+  }
+
+  .artist-name {
+    margin-left: 1em;
+  }
+}

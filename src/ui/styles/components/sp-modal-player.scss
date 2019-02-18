@@ -1,0 +1,89 @@
+.sp-modal-player {
+  top: 0;
+  top: 100vh;
+  position: absolute;
+  width: 100vw;
+  transition: top .2s;
+  height: 100vh;
+  background: linear-gradient(-45deg, #4f4635, #1f0f06, #4f4635, #4f4635);
+  background-size: 500% 500%;
+  z-index: 5;
+  animation: Gradient 30s infinite;
+  display: flex;
+  flex-direction: column;
+  color: white;
+
+  .arrow {
+    padding: 1em;
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover {
+      opacity: .8;
+      cursor: pointer;
+    }
+  }
+
+  .music {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    .artist {
+      color: #7c7974;
+    }
+  }
+
+  .indicator {
+    display: flex;
+    padding: 1em;
+    align-items: center;
+    padding-left: 1em;
+    color: #97948f;
+    font-size: 0.9rem;
+    padding-right: 1em;
+    .sp-indicator {
+      flex: 1;
+
+      .bar {
+        top: -18px;
+      }
+    }
+
+    span {
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+    }
+  }
+
+  .controls {
+    position: relative;
+    top: -10px;
+    display: flex;
+    flex-direction: row;
+    padding: 0.2em;
+    align-items: center;
+    justify-content: center;
+
+    > * {
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+    }
+  }
+
+  .music-box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      border: 0 !important;
+      outline: 0;
+      width: 200px;
+      height: 200px;
+      background-color: rgba(0, 0, 0, .2);
+    }
+  }
+}

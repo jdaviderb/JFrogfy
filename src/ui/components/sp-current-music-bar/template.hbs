@@ -1,0 +1,22 @@
+<div class="toggle" {{ action showPlayerModal }}>
+  <img src="/icons/arrow.svg">
+</div>
+
+<div class="music">
+  <div class="song">
+    {{tracksManager.currentTrack.name}}
+  </div>
+
+  <div class="artist">
+    {{tracksManager.currentTrack.artist}}
+  </div>
+</div>
+
+<div class="play">
+  {{sp-play-pause
+    onClick=(action togglePlay)
+    play=play
+    isLoading=isLoading
+  }}
+</div>
+<br>

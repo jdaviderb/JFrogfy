@@ -1,0 +1,30 @@
+<div class="arrow" {{action hide}}>
+  <img src="/icons/arrow.svg">
+</div>
+
+<div class="music-box">
+  <img src={{tracksManager.currentTrack.image}}>
+</div>
+
+
+<div class="music">
+  <div class="song">{{tracksManager.currentTrack.name}}</div>
+  <div class="artist">{{tracksManager.currentTrack.artist}}</div>
+</div>
+
+<div class="indicator">
+  <span>{{audio.currentTimePretty}}</span>
+  {{sp-indicator}}
+  <span>{{audio.durationPretty}}</span>
+</div>
+
+
+<div class="controls">
+  {{sp-play-pause}}
+  {{sp-play-pause
+    onClick=(action togglePlay)
+    play=play
+    isLoading=isLoading
+  }}
+  {{sp-play-pause}}
+</div>

@@ -1,0 +1,17 @@
+<div class="spotify-content">
+  {{sp-titlebar title="Explore"}}
+
+  <div class="title">
+    {{model.title}}
+  </div>
+
+  <div class="cards">
+    {{#each model.playlists as |playlist|}}
+      {{sp-music-card
+        id=playlist.id
+        name=playlist.name
+        image=playlist.image
+      }}
+    {{/each}}
+  </div>
+</div>

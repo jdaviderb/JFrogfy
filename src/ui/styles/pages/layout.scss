@@ -1,0 +1,69 @@
+.spotify-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+
+  border: solid 1px rgba(0,0,0,.6);
+  box-shadow: 0 0 2px black;
+
+  .spotify-content {
+    overflow: auto;
+    color: white;
+    background: linear-gradient(-45deg, #263956, rgba(255,255,255,0.00), #263956, #263956);
+    background-size: 500% 500%;
+    animation: Gradient 30s infinite;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    &.color-orange {
+      background: linear-gradient(-45deg, #181818, #1f0f06, #181818, #181818);
+      background-size: 500% 500%;
+    }
+
+    & > .title {
+      color: white;
+      padding: 0.5em;
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    .cards {
+      overflow: auto;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      min-height: 240px;
+
+      &.no-wrap {
+        flex-wrap: nowrap;
+      }
+
+      &.justify-content-initial {
+        justify-content: flex-start !important;
+      }
+
+    }
+
+    .section {
+      padding: 0.5em;
+    }
+  }
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}

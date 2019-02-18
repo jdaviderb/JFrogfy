@@ -1,57 +1,45 @@
-# client
+<div align="center"> <img width="200" src="https://user-images.githubusercontent.com/4649902/53248742-6df70900-3684-11e9-88d0-cfeeb67a430a.png"></div>
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+JFrogfy
+---
 
-## Prerequisites
+a simple clone of spotify built in Emberjs octane the music is played with youtube
 
-You will need the following things properly installed on your computer.
+[DEMO
+](https://jfrogfy.herokuapp.com/)
 
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with npm)
-* [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
+# Todo
+currrent status: **alpha**
 
-## Installation
+- [x] supports playlists
+- [x] supports search
+- [x] supports spotify explore
+- [ ] supports button next music
+- [ ] supports button previous music
+- [ ] supports empty state in search view
+- [ ] supports desktop by ember-electron
+- [ ] supports albums
+- [ ] supports PWA
+- [ ] test coverage
+---
 
-* `git clone <repository-url>` this repository
-* `cd client`
-* `npm install`
+# screenshots
 
-## Running / Development
+![](https://media.giphy.com/media/m9cko2IAd5tLHFUBRU/giphy.gif)
+![](https://media.giphy.com/media/LwDm98ufPLKhDJ4jJu/giphy.gif)
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
+# Development
 
-### Code Generators
+### **Emberjs (Client)**
 
-Make use of the many generators for code, try `ember help generate` for more details
+**to facilitate the development we document the list of addons we are using in this project :**
 
-### Running Tests
+- **ember-octane-blueprint** App and Addon blueprints for Ember Octane
+- **ember-concurrency:** that makes it easy to write concise, robust, and beautiful asynchronous code.
+- **ember-fetch:** fetch polyfill
+- **ember-cli-dotenv** Dotenv for your ember app through ember-cli
+- **ember-cli-fastboot:** Server-side rendering for Ember.js apps
+- **ember-cli-sass:** node-sass implementation for ember
 
-* `ember test`
-* `ember test --server`
+---
 
-### Linting
-
-* `npm run lint:hbs`
-* `npm run lint:js`
-* `npm run lint:js -- --fix`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)

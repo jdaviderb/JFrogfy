@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="486px" height="486px" viewBox="0 0 486 486" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>magnifier</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="magnifier" fill="#FAFAFA" fill-rule="nonzero">
+            <path d="M471.882,407.567 L360.567,296.243 C343.981,322.038 322.031,343.977 296.236,360.564 L407.56,471.888 C425.332,489.656 454.147,489.656 471.881,471.888 C489.654,454.149 489.654,425.334 471.882,407.567 Z" id="Shape"></path>
+            <path d="M363.909,181.955 C363.909,81.473 282.44,0 181.956,0 C81.474,0 0.001,81.473 0.001,181.955 C0.001,282.437 81.474,363.906 181.956,363.906 C282.44,363.906 363.909,282.437 363.909,181.955 Z M181.956,318.416 C106.704,318.416 45.491,257.208 45.491,181.956 C45.491,106.704 106.704,45.491 181.956,45.491 C257.206,45.491 318.424,106.704 318.424,181.956 C318.424,257.208 257.206,318.416 181.956,318.416 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>
