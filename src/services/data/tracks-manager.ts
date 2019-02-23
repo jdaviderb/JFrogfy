@@ -45,7 +45,7 @@ export default class DataTracksManagerService extends Service {
     this.set('currentTrack', track);
 
     this.audio.reset();
-    this.youtube.play(track.name, track.artist);
+    this.youtube.play(track);
     this.updateLocalStorage();
   }
 
@@ -53,7 +53,7 @@ export default class DataTracksManagerService extends Service {
   * play an song with local storage data
   */
   playLocal(): void {
-    this.youtube.play(this.currentTrack.name, this.currentTrack.artist);
+    this.youtube.play(this.currentTrack);
   }
 
   /**
@@ -63,7 +63,7 @@ export default class DataTracksManagerService extends Service {
     const newTrackIndex = this.tracks.indexOf(this.currentTrack) + 1;
     const newTrack = this.tracks[newTrackIndex];
     if (newTrack) {
-      this.youtube.play(newTrack.name, newTrack.artist);
+      this.youtube.play(newTrack);
       this.set('currentTrack', newTrack);
       this.updateLocalStorage();
     }

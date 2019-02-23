@@ -3,7 +3,7 @@ import { inject as service } from '@ember-decorators/service';
 import Audio from 'client/src/services/audio';
 import ENV from 'client/config/environment';
 import { task } from 'ember-concurrency-decorators';
-
+import Track from 'client/src/pojo/track';
 export default class YoutubeService extends Service {
   @service
   audio: Audio;
@@ -11,16 +11,16 @@ export default class YoutubeService extends Service {
   host: string = ENV.apiServer;
   endpoint: string = '/api/youtube/v1/get_video';
 
-  play(song: any, artist: any) {
+  play(track: Track) {
     // @ts-ignore
-    return this._load.perform(song, artist);
+    return this._load.perform(track);
   }
 
   // @ts-ignore
   @task({ drop: true })
-  *_load(song: string = 'Hello, my baby', artist: string = 'The Chordettes'): any {
+  *_load(track: Track): any {
     this.audio.pause();
-    const queryParams = encodeURI(`?artist=${artist}&song=${song}`);
+    const queryParams = encodeURI(`?artist=${track.artist}&song=${track.name}`);
     const response = yield fetch(this.host + this.endpoint + queryParams);
     const data = yield response.json();
     const audio = decodeURIComponent(data.video);
