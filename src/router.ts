@@ -13,6 +13,10 @@ Router.map(function() {
   this.route('playlists', function() {
     this.route('show', { path: ':id' })
   });
+
+  this.route('albums', function() {
+    this.route('show', { path: ':id' })
+  });
 });
 
 export default Router;

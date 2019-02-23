@@ -2,4 +2,11 @@
   <img src={{image}} alt="artist">
 </div>
 
-<div class="artist-name">{{name}}</div>
+<div class="artist-name">
+  {{name}}
+
+  {{#if description}}
+    <br>
+    <small>{{description}}</small>
+  {{/if}}
+</div>

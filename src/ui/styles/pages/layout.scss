@@ -52,6 +52,11 @@
 
     .section {
       padding: 0.5em;
+
+      &.scrollable {
+        flex: 1;
+        overflow: auto;
+      }
     }
   }
 }

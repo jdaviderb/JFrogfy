@@ -14,11 +14,11 @@ currrent status: **alpha**
 - [x] supports playlists
 - [x] supports search
 - [x] supports spotify explore
+- [x] supports albums
 - [ ] supports button next music
 - [ ] supports button previous music
 - [ ] supports empty state in search view
 - [ ] supports desktop by ember-electron
-- [ ] supports albums
 - [ ] supports PWA
 - [ ] test coverage
 ---

@@ -5,7 +5,7 @@ export default function serialize(item: any): Track {
   let artist;
   let image;
 
-  if (!item.track) { new Track({ available: false }); }
+  if (!item.track) { return new Track({ available: false }); }
 
   if (item.track.artists) { artist = item.track.artists[0].name; }
   if (hasImages) { image = item.track.album.images[0].url; }

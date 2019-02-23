@@ -2,19 +2,19 @@ import Service from '@ember/service';
 import { task } from 'ember-concurrency-decorators';
 import fetch from 'fetch';
 import ENV from 'client/config/environment';
-import SerializeTrack from 'client/src/serializers/track';
+import SerializeTrackAlbum from 'client/src/serializers/trackAlbum';
 import Track from 'client/src/pojo/track';
 
-export default class DataPlaylistsService extends Service {
+export default class DataAlbumsService extends Service {
   host: string = ENV.apiServer;
-  endpoint: string = '/api/spotify/v1/playlists/';
+  endpoint: string = '/api/spotify/v1/albums/';
   title: string = '';
   description: string = '';
   image: any = null;
   tracks: Track[] = [];
 
   /**
-  * load a playlist from spotify
+  * load an album from spotify
   */
   load(id: string): any {
     // @ts-ignore
@@ -25,29 +25,29 @@ export default class DataPlaylistsService extends Service {
   *_load(id: string) {
     const response = yield fetch(this.host + this.endpoint + id);
     const { data } = yield response.json();
-    const tracksRaw = data.table.tracks.items;
-    const tracks = tracksRaw.map(SerializeTrack).filter((item: Track) => item.available);
 
-    this.setProperties({
+    const image = data.table.images[0].url;
+    const tracksRaw = data.table.tracks.items;
+    const tracks = tracksRaw.map(SerializeTrackAlbum).filter((item: Track) => item.available);
+
+    // set images
+    tracks.forEach((track: Track) => track.image = image)
+
+    const album = {
       title: data.table.name,
       description: data.table.description,
-      image: data.table.images[0].url
-    });
-
-    this.tracks.clear();
-    this.tracks.pushObjects(tracks);
-
-    return {
-      title: this.title,
-      image: this.image,
-      description: this.description,
-      tracks,
+      image,
+      tracks
     };
+
+    this.setProperties(album);
+
+    return album;
   }
 }
 
 declare module '@ember/service' {
   interface Registry {
-    'data/playlists': DataPlaylistsService;
+    'data/albums': DataAlbumsService;
   }
 }
