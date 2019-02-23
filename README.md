@@ -34,6 +34,7 @@ currrent status: **alpha**
 
 **to facilitate the development we document the list of addons we are using in this project :**
 
+- **ember-cli-typescript** Use TypeScript in your Ember.js apps!
 - **ember-octane-blueprint** App and Addon blueprints for Ember Octane
 - **ember-concurrency:** that makes it easy to write concise, robust, and beautiful asynchronous code.
 - **ember-fetch:** fetch polyfill

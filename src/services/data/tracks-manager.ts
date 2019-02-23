@@ -2,7 +2,7 @@ import Service from '@ember/service';
 import { inject as service } from '@ember-decorators/service';
 import { alias } from '@ember-decorators/object/computed';
 import Youtube from 'client/src/services/youtube';
-import Audio from 'client/src/services/Audio';
+import Audio from 'client/src/services/audio';
 import Track from 'client/src/pojo/track';
 const STORAGE_KEY = 'tracks-manager';
 

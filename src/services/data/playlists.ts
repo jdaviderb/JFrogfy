@@ -15,7 +15,7 @@ export default class DataPlaylistsService extends Service {
   /**
   * load a playlist from spotify
   */
-  load(id: string) {
+  load(id: string): any {
     // @ts-ignore
     return this._load.perform(id);
   }
