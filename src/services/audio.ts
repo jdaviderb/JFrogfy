@@ -17,6 +17,8 @@ export default class AudioService extends Service {
   constructor() {
     super(...arguments);
 
+    if ((typeof Audio) === 'undefined') { return; }
+
     this.audio = new Audio();
     this.audio.ontimeupdate = this.onTimeUpdate.bind(this);
     this.audio.onplaying = this.onPlaying.bind(this);
