@@ -2,16 +2,18 @@ import Service from '@ember/service';
 import { task } from 'ember-concurrency-decorators';
 import fetch from 'fetch';
 import ENV from 'client/config/environment';
-import SerializeTrack from 'client/src/serializers/track';
+import SerializeArtist from 'client/src/serializers/artist';
+import SerializeAlbum from 'client/src/serializers/album';
 import Track from 'client/src/pojo/track';
+import Artist from 'client/src/pojo/artist';
+import Album from 'client/src/pojo/album';
 
 export default class DataArtistsService extends Service {
   host: string = ENV.apiServer;
-  endpoint: string = '/api/spotify/v1/playlists/';
-  title: string = '';
-  description: string = '';
-  image: any = null;
+  endpoint: string = '/api/spotify/v1/artists/';
+  artist: Artist;
   tracks: Track[] = [];
+  albums: Album[] = [];
 
   /**
   * load a playlist from spotify
@@ -25,23 +27,16 @@ export default class DataArtistsService extends Service {
   *_load(id: string) {
     const response = yield fetch(this.host + this.endpoint + id);
     const { data } = yield response.json();
-    const tracksRaw = data.table.tracks.items;
-    const tracks = tracksRaw.map(SerializeTrack).filter((item: Track) => item.available);
 
-    this.setProperties({
-      title: data.table.name,
-      description: data.table.description,
-      image: data.table.images[0].url
-    });
+    const artist = SerializeArtist(data.artist.table);
+    const albums = data.albums.table.items.map(SerializeAlbum);
 
-    this.tracks.clear();
-    this.tracks.pushObjects(tracks);
+    this.setProperties({ artist, albums });
+
 
     return {
-      title: this.title,
-      image: this.image,
-      description: this.description,
-      tracks,
+      artist,
+      albums
     };
   }
 }

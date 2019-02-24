@@ -62,12 +62,10 @@ export default class DataSearchService extends Service {
     const artists = data.table.artists.items.slice(0, 10).map(serializeArtist);
     const tracks = data.table.tracks.items.map(serializeTrackAlbum);
 
-    const artist = {
-      name: data.table.artists.items[0].name,
-      image: data.table.artists.items[0].images[0].url
-    };
+    this.artists.clear();
+    this.artists.pushObjects(artists);
 
-    this.setProperties({ playlists, tracks, artist, artists });
+    this.setProperties({ playlists, tracks });
   }
 }
 

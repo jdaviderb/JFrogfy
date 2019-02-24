@@ -11,11 +11,15 @@ Router.map(function() {
   this.route('search');
 
   this.route('playlists', function() {
-    this.route('show', { path: ':id' })
+    this.route('show', { path: ':id' });
   });
 
   this.route('albums', function() {
-    this.route('show', { path: ':id' })
+    this.route('show', { path: ':id' });
+  });
+
+  this.route('artists', function() {
+    this.route('show', { path: ':id' });
   });
 });
 

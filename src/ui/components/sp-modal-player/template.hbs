@@ -20,11 +20,19 @@
 
 
 <div class="controls">
-  {{sp-play-pause}}
+  {{sp-play-pause
+    onClick=(action previousPlay)
+    playIcon="/icons/previous-track.svg"
+    hideRadios=true
+  }}
   {{sp-play-pause
     onClick=(action togglePlay)
     play=play
     isLoading=isLoading
   }}
-  {{sp-play-pause}}
+  {{sp-play-pause
+    onClick=(action nextPlay)
+    playIcon="/icons/next-track.svg"
+    hideRadios=true
+  }}
 </div>

@@ -57,15 +57,34 @@ export default class DataTracksManagerService extends Service {
   }
 
   /**
+  * previous song
+  */
+
+  previousPlay(): void {
+    this.nextPlay(-1);
+  }
+
+  /**
   * next song
   */
-  nextPlay(): void {
-    const newTrackIndex = this.tracks.indexOf(this.currentTrack) + 1;
+  nextPlay(next = 1): void {
+    let newTrackIndex: number = -1;
+
+    this.tracks.forEach((track: Track, index) => {
+      if (track.name === this.currentTrack.name && track.artist === this.currentTrack.artist) {
+        newTrackIndex = index + next;
+      }
+    });
+
     const newTrack = this.tracks[newTrackIndex];
     if (newTrack) {
+      this.audio.reset();
+      this.audio.setIsLoading();
       this.youtube.play(newTrack);
       this.set('currentTrack', newTrack);
       this.updateLocalStorage();
+    } else {
+      this.audio.pause();
     }
   }
 

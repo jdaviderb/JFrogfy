@@ -1,11 +1,17 @@
 <div class="spotify-content color-orange">
-  {{sp-search-input value=searchState.keyword placeholder="Start typing..."}}
+  {{sp-search-input autofocus=true value=searchState.keyword placeholder="Start typing..."}}
 
-  {{#if searchState.artist}}
+  {{#if searchState.artists.length}}
+
+    <div class="title">
+      Artists
+    </div>
+
     <div class="section">
       <div class="cards no-wrap justify-content-initial">
         {{#each searchState.artists as |artist|}}
           {{sp-music-card
+            link="artists.show"
             id=artist.id
             name=artist.name
             image=artist.image
@@ -24,7 +30,7 @@
       {{#each searchState.playlists as |playlist|}}
         {{sp-music-card
           id=playlist.id
-          name=playlist.name
+          name=(truncate playlist.name 20)
           image=playlist.image
         }}
       {{/each}}

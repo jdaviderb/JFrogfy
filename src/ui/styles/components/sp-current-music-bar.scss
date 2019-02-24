@@ -14,13 +14,21 @@
     }
   }
 
-  .toggle, .play {
-    color: rgb(145, 145, 145);
-    margin: 0.5em;
+  .toggle {
     cursor: pointer;
-
     &:hover {
       opacity: .5;
+    }
+  }
+
+  .play {
+    display: flex;
+    flex-direction: row;
+    color: rgb(145, 145, 145);
+    cursor: pointer;
+
+    > * {
+      // margin-left: .2em;
     }
   }
 

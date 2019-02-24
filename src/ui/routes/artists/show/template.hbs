@@ -1,0 +1,25 @@
+<div class="spotify-content color-orange">
+  <div class="section">
+
+    <div class="cards non-height">
+      {{sp-artist
+        id=model.artist.id
+        name=model.artist.name
+        image=model.artist.image
+      }}
+    </div>
+  </div>
+
+  <div class="section scrollable">
+    <div class="cards">
+      {{#each model.albums as |album|}}
+        {{sp-music-card
+          id=album.id
+          link="albums.show"
+          name=(truncate album.name 20)
+          image=album.image
+        }}
+      {{/each}}
+    </div>
+  </div>
+</div>

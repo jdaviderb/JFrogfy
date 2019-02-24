@@ -23,6 +23,11 @@
       background-size: 500% 500%;
     }
 
+    &.color-purple {
+      background: linear-gradient(-45deg, #170f1f, #1f0f06, #170f1f, #342444);
+      background-size: 500% 500%;
+    }
+
     & > .title {
       color: white;
       padding: 0.5em;
@@ -31,21 +36,24 @@
     }
 
     .cards {
-      overflow: auto;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      width: 100%;
+      overflow: auto;
       min-height: 240px;
 
       &.no-wrap {
         flex-wrap: nowrap;
       }
 
+      &.non-height {
+        min-height: initial !important;
+      }
+
       &.justify-content-initial {
-        justify-content: flex-start !important;
+        justify-content: initial;
       }
 
     }
