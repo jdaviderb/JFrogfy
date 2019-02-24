@@ -8,6 +8,7 @@ a simple clone of spotify built in Emberjs octane the music is played with youtu
 [DEMO
 ](https://jfrogfy.herokuapp.com/)
 
+<a href="https://codeclimate.com/github/jdaviderb/JFrogfy/maintainability"><img src="https://api.codeclimate.com/v1/badges/99e9eded1c1d984529b3/maintainability" /></a>
 # Todo
 currrent status: **alpha**
 
