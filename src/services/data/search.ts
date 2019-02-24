@@ -2,6 +2,8 @@ import Service from '@ember/service';
 import { task } from 'ember-concurrency-decorators';
 import fetch from 'fetch';
 import config from 'client/config/environment';
+import serializeTrackAlbum from 'client/src/serializers/trackAlbum';
+import serializePlaylist from 'client/src/serializers/playlist';
 
 export default class DataSearchService extends Service {
   host: any = config.apiServer;
@@ -51,8 +53,8 @@ export default class DataSearchService extends Service {
     const response = yield fetch(this.host + this.endpoint + keyword, options);
     const { data } = yield response.json();
 
-    const playlists = data.table.playlists.items.slice(0, 10).map(this._serializePlaylists);
-    const tracks = data.table.tracks.items.map(this._serializeTrack);
+    const playlists = data.table.playlists.items.slice(0, 10).map(serializePlaylist);
+    const tracks = data.table.tracks.items.map(serializeTrackAlbum);
 
     const artist = {
       name: data.table.artists.items[0].name,
@@ -60,28 +62,6 @@ export default class DataSearchService extends Service {
     };
 
     this.setProperties({ playlists, tracks, artist });
-  }
-
-  _serializePlaylists(item: any): any {
-    return {
-      id: item.id,
-      name: item.name,
-      image: item.images[0].url
-    };
-  }
-
-  _serializeTrack(item: any): any {
-    let artist;
-    let image;
-
-    if (item.artists) { artist = item.artists[0].name; }
-    if (item.album.images) { image = item.album.images[0].url; }
-
-    return {
-      name: item.name,
-      artist,
-      image
-    };
   }
 }
 

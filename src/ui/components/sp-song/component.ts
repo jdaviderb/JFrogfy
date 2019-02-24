@@ -14,7 +14,7 @@ export default class SpSongComponent extends Component {
   attributeBindings = ['onClick'];
 
   @computed('currentTrack')
-  get isActive(): any {
+  get isActive(): boolean {
     const song = this.song + this.artist;
     const currentSong = this.currentTrack.name + this.currentTrack.artist;
 

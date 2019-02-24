@@ -6,7 +6,7 @@ import PlayerModal from 'client/src/services/modals/player';
 
 export default class CurrentMusicBarComponent extends Component {
   @service audio: any;
-  @service('data/tracks-manager') tracksManager : TracksManager;
+  @service('data/tracks-manager') tracksManager: TracksManager;
   @service('modals/player') playerModal: PlayerModal;
   @alias('audio.isPlay') play: boolean;
   @alias('audio.isLoading') isLoading: boolean;
