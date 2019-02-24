@@ -3,14 +3,19 @@
 
   {{#if searchState.artist}}
     <div class="section">
-      {{sp-artist
-        name=searchState.artist.name
-        image=searchState.artist.image
-      }}
+      <div class="cards no-wrap justify-content-initial">
+        {{#each searchState.artists as |artist|}}
+          {{sp-music-card
+            id=artist.id
+            name=artist.name
+            image=artist.image
+          }}
+        {{/each}}
+      </div>
     </div>
 
     <div class="title">
-      Featuring {{searchState.artist.name}}
+      Playlists
     </div>
   {{/if}}
 

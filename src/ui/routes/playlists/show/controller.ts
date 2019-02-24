@@ -4,7 +4,6 @@ import { inject as service } from '@ember-decorators/service';
 import TracksManager from 'client/src/services/data/tracks-manager';
 
 export default class PlaylistsShowController extends Controller {
-  @service youtube: any;
   @service('data/tracks-manager') tracksManager: TracksManager;
 
   @action

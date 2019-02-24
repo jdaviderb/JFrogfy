@@ -4,13 +4,18 @@ import fetch from 'fetch';
 import config from 'client/config/environment';
 import serializeTrackAlbum from 'client/src/serializers/trackAlbum';
 import serializePlaylist from 'client/src/serializers/playlist';
+import serializeArtist from 'client/src/serializers/artist';
 
+import Track from 'client/src/pojo/track';
+import Playlist from 'client/src/pojo/playlist';
+import Artist from 'client/src/pojo/artist';
 export default class DataSearchService extends Service {
   host: any = config.apiServer;
   endpoint = '/api/spotify/v1/search/';
   keyword = '';
-  playlists = [];
-  tracks = [];
+  playlists: Playlist[] = [];
+  tracks: Track[] = [];
+  artists: Artist[] = [];
   artist = null;
   controller: AbortController;
   signal: AbortSignal;
@@ -54,6 +59,7 @@ export default class DataSearchService extends Service {
     const { data } = yield response.json();
 
     const playlists = data.table.playlists.items.slice(0, 10).map(serializePlaylist);
+    const artists = data.table.artists.items.slice(0, 10).map(serializeArtist);
     const tracks = data.table.tracks.items.map(serializeTrackAlbum);
 
     const artist = {
@@ -61,7 +67,7 @@ export default class DataSearchService extends Service {
       image: data.table.artists.items[0].images[0].url
     };
 
-    this.setProperties({ playlists, tracks, artist });
+    this.setProperties({ playlists, tracks, artist, artists });
   }
 }
 
