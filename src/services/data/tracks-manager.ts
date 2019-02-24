@@ -23,12 +23,7 @@ export default class DataTracksManagerService extends Service {
       const { tracks, currentTrack } = this.getLocalStorage();
 
       this.setProperties({ tracks, currentTrack });
-
-      this.audio.audio.currentTime = window.localStorage.currentTime || 0;
-      this.audio.currentTimePretty = window.localStorage.currentTimePretty || 0;
-      this.audio.currentTimePercent = window.localStorage.currentTimePercent || 0;
-      this.audio.duration = window.localStorage.duration || 0;
-      this.audio.durationPretty = window.localStorage.durationPretty || 0;
+      this.audio.loadLocalStorage();
     }
   }
 

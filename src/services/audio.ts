@@ -91,6 +91,17 @@ export default class AudioService extends Service {
   }
 
   /**
+  * load state from localStorage
+  */
+  loadLocalStorage() {
+    this.audio.currentTime = window.localStorage.currentTime || 0;
+    this.currentTimePretty = window.localStorage.currentTimePretty || 0;
+    this.currentTimePercent = window.localStorage.currentTimePercent || 0;
+    this.duration = window.localStorage.duration || 0;
+    this.durationPretty = window.localStorage.durationPretty || 0;
+  }
+
+  /**
   * save state in the localStorage
   */
   saveLocalStorage() {
