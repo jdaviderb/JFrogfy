@@ -11,8 +11,8 @@ export default function serialize(item: any): Track {
 
   return new Track({
     name: item.track.name,
+    available: true,
     artist,
-    image,
-    available: true
+    image
   });
 }

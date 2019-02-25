@@ -33,11 +33,7 @@ export default class DataArtistsService extends Service {
 
     this.setProperties({ artist, albums });
 
-
-    return {
-      artist,
-      albums
-    };
+    return { artist, albums };
   }
 }
 

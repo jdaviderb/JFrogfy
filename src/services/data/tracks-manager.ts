@@ -54,7 +54,6 @@ export default class DataTracksManagerService extends Service {
   /**
   * previous song
   */
-
   previousPlay(): void {
     this.nextPlay(-1);
   }

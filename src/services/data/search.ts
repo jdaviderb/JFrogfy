@@ -11,8 +11,8 @@ import Playlist from 'client/src/pojo/playlist';
 import Artist from 'client/src/pojo/artist';
 export default class DataSearchService extends Service {
   host: any = config.apiServer;
-  endpoint = '/api/spotify/v1/search/';
-  keyword = '';
+  endpoint: string = '/api/spotify/v1/search/';
+  keyword: string = '';
   playlists: Playlist[] = [];
   tracks: Track[] = [];
   artists: Artist[] = [];
