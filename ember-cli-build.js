@@ -11,6 +11,12 @@ module.exports = function(defaults) {
 
     babel: {
       plugins: ["@babel/plugin-proposal-class-properties"]
+    },
+
+    'esw-cache-fallback': {
+      patterns: [
+        '/api/(.+)'
+      ],
     }
   });
 
