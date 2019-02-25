@@ -2,9 +2,9 @@
   top: 0;
   top: 100vh;
   position: absolute;
-  width: 100vw;
+  width: 100%;
   transition: top .2s;
-  height: 100vh;
+  height: 100%;
   background: linear-gradient(-45deg, #4f4635, #1f0f06, #4f4635, #4f4635);
   background-size: 500% 500%;
   z-index: 5;
