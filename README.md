@@ -19,16 +19,11 @@ currrent status: **alpha**
 - [x] supports albums
 - [x] supports button next music
 - [x] supports button previous music
+- [x] supports PWA
 - [ ] supports empty state in search view
 - [ ] supports desktop by ember-electron
-- [ ] supports PWA
 - [ ] test coverage
 ---
-
-# screenshots
-
-![](https://media.giphy.com/media/m9cko2IAd5tLHFUBRU/giphy.gif)
-![](https://media.giphy.com/media/LwDm98ufPLKhDJ4jJu/giphy.gif)
 
 # Development
 
@@ -44,5 +39,9 @@ currrent status: **alpha**
 - **ember-cli-fastboot:** Server-side rendering for Ember.js apps
 - **ember-cli-sass:** node-sass implementation for ember
 
----
+# screenshots
 
+![image](https://user-images.githubusercontent.com/4649902/53308675-2f727180-3871-11e9-9d85-97c8c9feb474.png)
+![image](https://user-images.githubusercontent.com/4649902/53308615-cdb20780-3870-11e9-9550-427e36a2a4bc.png)
+![image](https://user-images.githubusercontent.com/4649902/53308639-f2a67a80-3870-11e9-9425-0f9869486c28.png)![image](https://user-images.githubusercontent.com/4649902/53308597-a52a0d80-3870-11e9-9b1a-a8da8f2cbeb5.png)
+![](https://media.giphy.com/media/m9cko2IAd5tLHFUBRU/giphy.gif)
