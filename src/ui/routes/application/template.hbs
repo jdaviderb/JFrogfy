@@ -2,19 +2,22 @@
   <title>
    {{headData.title}} {{headData.description}}
   </title>
+
   <meta property="og:title" content={{headData.title}}>
   <meta property="og:description" content={{headData.description}}>
   <meta name="Description" content="{{headData.title}} {{headData.description}}">
-
-  <meta name="twitter:title" content={{headData.title}}>
-  <meta name="twitter:description" content={{headData.description}}>
   {{#if headData.image}}
     <meta property="og:image:url" content={{headData.image}}>
     <meta property="og:image:alt" content={{headData.title}}>
-
-    <meta name="twitter:image" content={{headData.image}}>
-    <meta name="twitter:card" content={{headData.title}}>
   {{/if}}
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@jfrogfy">
+  <meta name="twitter:title" content={{headData.title}}>
+  <meta name="twitter:description" content="{{headData.description}}">
+  <meta name="twitter:creator" content="@jfrogfy">
+  <meta name="twitter:image:src" content={{headData.image}}>
+  <meta name="twitter:domain" content="jfrogfy.com">
 {{/-in-element}}
 
 <div class="spotify-container">
