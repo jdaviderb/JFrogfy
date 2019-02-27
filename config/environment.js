@@ -31,7 +31,7 @@ module.exports = function(environment) {
       // when it is created
     },
     fastboot: {
-      hostWhitelist: ['www.myscraping.com','jfrogfy.herokuapp.com', /^localhost:\d+$/]
+      hostWhitelist: ['www.jfrogfy.com','jfrogfy.herokuapp.com', /^localhost:\d+$/]
     }
   };
 
