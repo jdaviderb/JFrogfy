@@ -31,7 +31,7 @@ module.exports = function(environment) {
       // when it is created
     },
     fastboot: {
-      hostWhitelist: ['www.jfrogfy.com','jfrogfy.herokuapp.com', /^localhost:\d+$/]
+      hostWhitelist: ['jfrogfy.com','www.jfrogfy.com','jfrogfy.herokuapp.com', /^localhost:\d+$/]
     }
   };
 
