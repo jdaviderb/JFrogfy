@@ -6,9 +6,14 @@
   <meta property="og:description" content={{headData.description}}>
   <meta name="Description" content="{{headData.title}} {{headData.description}}">
 
+  <meta name="twitter:title" content={{headData.title}}>
+  <meta name="twitter:description" content={{headData.description}}>
   {{#if headData.image}}
     <meta property="og:image:url" content={{headData.image}}>
     <meta property="og:image:alt" content={{headData.title}}>
+
+    <meta name="twitter:image" content={{headData.image}}>
+    <meta name="twitter:card" content={{headData.title}}>
   {{/if}}
 {{/-in-element}}
 
