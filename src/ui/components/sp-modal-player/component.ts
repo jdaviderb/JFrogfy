@@ -10,7 +10,7 @@ export default class SpModalPlayerComponent extends Component {
   @alias('audio.isPlay') play: boolean;
   @alias('modalState.open') open: boolean;
   @alias('audio.isLoading') isLoading: boolean;
-  classNames = ['sp-modal-player']
+  classNames = ['sp-modal-player'];
 
   constructor() {
     super(...arguments);

@@ -41,7 +41,7 @@ export default class DataPlaylistsService extends Service {
       title: this.title,
       image: this.image,
       description: this.description,
-      tracks,
+      tracks
     };
   }
 }

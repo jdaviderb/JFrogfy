@@ -1,3 +1,16 @@
+{{#-in-element headElement}}
+  <title>
+   {{headData.title}} {{headData.description}}
+  </title>
+  <meta property="og:title" content={{headData.title}}>
+  <meta property="og:description" content={{headData.description}}>
+  <meta name="Description" content="{{headData.title}} {{headData.description}}">
+
+  {{#if headData.image}}
+    <meta property="og:image:url" content={{headData.image}}>
+    <meta property="og:image:alt" content={{headData.title}}>
+  {{/if}}
+{{/-in-element}}
 
 <div class="spotify-container">
   {{outlet}}
@@ -8,4 +21,3 @@
   </div>
   {{sp-modal-player}}
 </div>
-

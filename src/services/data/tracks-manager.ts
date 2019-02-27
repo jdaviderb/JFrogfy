@@ -45,7 +45,7 @@ export default class DataTracksManagerService extends Service {
   }
 
   /**
-  * play an song with local storage data
+  * play an song from local storage data
   */
   playLocal(): void {
     this.youtube.play(this.currentTrack);

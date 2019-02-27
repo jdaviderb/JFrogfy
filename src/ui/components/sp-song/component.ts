@@ -16,7 +16,10 @@ export default class SpSongComponent extends Component {
   @computed('currentTrack')
   get isActive(): boolean {
     const song = this.song + this.artist;
-    const currentSong = this.currentTrack.name + this.currentTrack.artist;
+    let currentSong;
+    if (this.currentTrack) {
+      currentSong = this.currentTrack.name + this.currentTrack.artist;
+    }
 
     return song == currentSong;
   }

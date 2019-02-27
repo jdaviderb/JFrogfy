@@ -10,7 +10,7 @@ a simple clone of spotify built in Emberjs octane the music is played with youtu
 
 <a href="https://codeclimate.com/github/jdaviderb/JFrogfy/maintainability"><img src="https://api.codeclimate.com/v1/badges/99e9eded1c1d984529b3/maintainability" /></a>
 # Todo
-currrent status: **alpha**
+current status: **alpha**
 
 - [x] supports playlists
 - [x] supports search
@@ -20,6 +20,7 @@ currrent status: **alpha**
 - [x] supports button next music
 - [x] supports button previous music
 - [x] supports PWA
+- [x] supports SEO
 - [ ] supports empty state in search view
 - [ ] supports desktop by ember-electron
 - [ ] test coverage
@@ -30,7 +31,6 @@ currrent status: **alpha**
 ### **Emberjs (Client)**
 
 **to facilitate the development we document the list of addons we are using in this project :**
-
 - **ember-cli-typescript** Use TypeScript in your Ember.js apps!
 - **ember-octane-blueprint** App and Addon blueprints for Ember Octane
 - **ember-concurrency:** that makes it easy to write concise, robust, and beautiful asynchronous code.
