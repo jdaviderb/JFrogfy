@@ -21,7 +21,7 @@ current status: **alpha**
 - [x] supports button previous music
 - [x] supports PWA
 - [x] supports SEO
-- [ ] supports empty state in search view
+- [x] supports empty state in search view
 - [ ] supports desktop by ember-electron
 - [ ] test coverage
 ---

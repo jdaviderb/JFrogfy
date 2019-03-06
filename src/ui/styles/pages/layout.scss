@@ -1,3 +1,9 @@
+img.jfrogfy-logo {
+  width: 200px;
+  height: 200px;
+  max-width: 100%;
+}
+
 .spotify-container {
   display: flex;
   flex-direction: column;
@@ -63,6 +69,15 @@
       &.scrollable {
         flex: 1;
         overflow: auto;
+      }
+
+      &.flex {
+        display: flex;
+      }
+
+      &.center {
+        justify-content: center;
+        align-items: center;
       }
     }
   }

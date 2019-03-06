@@ -1,8 +1,7 @@
 <div class="spotify-content color-orange">
   {{sp-search-input autofocus=true value=searchState.keyword placeholder="Start typing..."}}
 
-  {{#if searchState.artists.length}}
-
+  {{#if searchState.tracks.length}}
     <div class="title">
       Artists
     </div>
@@ -23,27 +22,38 @@
     <div class="title">
       Playlists
     </div>
-  {{/if}}
+    <div class="section">
+      <div class="cards no-wrap justify-content-initial">
+        {{#each searchState.playlists as |playlist|}}
+          {{sp-music-card
+            id=playlist.id
+            name=(truncate playlist.name 20)
+            image=playlist.image
+          }}
+        {{/each}}
+      </div>
+    </div>
 
-  <div class="section">
-    <div class="cards no-wrap justify-content-initial">
-      {{#each searchState.playlists as |playlist|}}
-        {{sp-music-card
-          id=playlist.id
-          name=(truncate playlist.name 20)
-          image=playlist.image
+    <div class="section">
+      {{#each searchState.tracks as |track|}}
+        {{sp-song
+          onClick=(action play track searchState.tracks)
+          song=track.name
+          artist=track.artist
         }}
       {{/each}}
     </div>
-  </div>
 
-  <div class="section">
-    {{#each searchState.tracks as |track|}}
-      {{sp-song
-        onClick=(action play track searchState.tracks)
-        song=track.name
-        artist=track.artist
-      }}
-    {{/each}}
-  </div>
+ {{else}}
+
+  {{#unless searchState.isLoading}}
+    <div class="section scrollable center flex">
+      <img class="jfrogfy-logo" src="/images/icons/icon-512x512.png">
+    </div>
+  {{/unless}}
+ {{/if}}
+
+{{#if searchState.isLoading}}
+  {{sp-search-empty-state}}
+{{/if}}
 </div>

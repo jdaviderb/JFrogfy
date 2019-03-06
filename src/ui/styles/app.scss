@@ -18,6 +18,8 @@ body {
   width: 100%;
 }
 
+@import "addons/ember-placeholders-patch";
+@import "ember-content-placeholders";
 @import "pages/layout";
 @import "components/sp-titlebar";
 @import "components/sp-tabbar";

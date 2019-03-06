@@ -5,11 +5,13 @@ import config from 'client/config/environment';
 import serializeTrackAlbum from 'client/src/serializers/trackAlbum';
 import serializePlaylist from 'client/src/serializers/playlist';
 import serializeArtist from 'client/src/serializers/artist';
-
 import Track from 'client/src/pojo/track';
 import Playlist from 'client/src/pojo/playlist';
 import Artist from 'client/src/pojo/artist';
+import { alias } from '@ember-decorators/object/computed';
+
 export default class DataSearchService extends Service {
+  @alias('_load.isRunning') isLoading: boolean;
   host: any = config.apiServer;
   endpoint: string = '/api/spotify/v1/search/';
   keyword: string = '';
@@ -51,10 +53,9 @@ export default class DataSearchService extends Service {
 
   @task
   *_load(keyword: string): any {
-    const options = {
-      method: 'get',
-      signal: this.signal
-    }
+    this.clear();
+    if (!keyword.length) { return; }
+    const options = { method: 'get', signal: this.signal };
     const response = yield fetch(this.host + this.endpoint + keyword, options);
     const { data } = yield response.json();
 
@@ -62,10 +63,18 @@ export default class DataSearchService extends Service {
     const artists = data.table.artists.items.slice(0, 10).map(serializeArtist);
     const tracks = data.table.tracks.items.map(serializeTrackAlbum);
 
-    this.artists.clear();
     this.artists.pushObjects(artists);
+    this.playlists.pushObjects(playlists);
+    this.tracks.pushObjects(tracks);
+  }
 
-    this.setProperties({ playlists, tracks });
+  /**
+  * reset search state
+  */
+  clear() {
+    this.playlists.clear();
+    this.artists.clear();
+    this.tracks.clear();
   }
 }
 

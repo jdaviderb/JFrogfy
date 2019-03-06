@@ -71,6 +71,7 @@ export default class DataTracksManagerService extends Service {
     });
 
     const newTrack = this.tracks[newTrackIndex];
+
     if (newTrack) {
       this.audio.reset();
       this.audio.setIsLoading();

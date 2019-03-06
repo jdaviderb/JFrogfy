@@ -135,6 +135,7 @@ export default class AudioService extends Service {
   }
 
   onEnd(): void {
+    this.set('isLoading', false);
     this.reset();
     this.tracksManager.nextPlay();
   }

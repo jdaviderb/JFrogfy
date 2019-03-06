@@ -10,21 +10,46 @@ export default class YoutubeService extends Service {
 
   host: string = ENV.apiServer;
   endpoint: string = '/api/youtube/v1/get_video';
+  controller: AbortController;
+  signal: AbortSignal;
+  task: any;
 
-  play(track: Track) {
+  constructor() {
+    super(...arguments);
+
+    this.controller = new AbortController();
+    this.controller.signal
+    this.signal = this.controller.signal;
+  }
+
+  play(track: Track): any {
+    if (this.controller && this.task) {
+      this.controller.abort();
+      this.controller = new AbortController();
+      this.signal = this.controller.signal;
+      this.task.cancel();
+    }
     // @ts-ignore
-    return this._load.perform(track);
+    this.task = this._load.perform(track);
+    return this.task;
   }
 
   // @ts-ignore
-  @task({ drop: true })
+  @task({ maxConcurrency: 2, drop: true })
   *_load(track: Track): any {
-    this.audio.pause();
-    const queryParams = encodeURI(`?artist=${track.artist}&song=${track.name}`);
-    const response = yield fetch(this.host + this.endpoint + queryParams);
-    const data = yield response.json();
-    const audio = decodeURIComponent(data.video);
-    this.audio.play(audio);
+    let audio;
+    const options = { method: 'get', signal: this.signal };
+
+    try {
+      this.audio.pause();
+      const queryParams = encodeURI(`?artist=${track.artist}&song=${track.name}`);
+      const response = yield fetch(this.host + this.endpoint + queryParams, options);
+      const data = yield response.json();
+      audio = decodeURIComponent(data.video);
+      this.audio.play(audio);
+    } catch(error) {
+      this.audio.tracksManager.nextPlay();
+    }
 
     return audio;
   }

@@ -28,3 +28,17 @@
     }
   }
 }
+
+.sp-music-card-empty {
+  display: flex;
+  align-self: flex-start;
+  // background-color: red;
+
+
+  .card {
+    // padding: 0.5em;
+    margin: 0.5em;
+    width: 200px;
+    // height: 200px;
+  }
+}
